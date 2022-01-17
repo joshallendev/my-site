@@ -5,7 +5,6 @@
 	import Footer from '../components/footer.svelte';
 
 	$: pageTitle = $page.url.pathname.substring(1);
-	console.log(pageTitle);
 </script>
 <svelte:head>
 	<title>Josh Allen | {!pageTitle ? 'Sofware Developer' : pageTitle[0].toUpperCase() + pageTitle.substring(1)}</title>
