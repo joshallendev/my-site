@@ -1,10 +1,15 @@
 <script lang="ts">
     import { page } from "$app/stores";
+    import { onDestroy } from "svelte";
 
     const navLinks: {
         name: string,
         path: string
     } [] = [
+        {
+            name: 'Home', 
+            path: '/'
+        },
         {
             name: 'About',
             path: '/about'
@@ -18,9 +23,11 @@
             path: '/contact'
         }
     ]
-    const activePath:string = $page.url.pathname;
-    const nonActiveLinkSyles:string = "mr-5 hover:text-jblue hover:font-bold";
-    const activeLinkSyles:string = "mr-5 text-jblue font-bold";
+    $: activePath = $page.url.pathname;
+    console.log($page);
+    const nonActiveLinkSyles:string = "ml-5 hover:text-jblue hover:font-bold";
+    const activeLinkSyles:string = "ml-5 text-jblue font-bold";
+
 </script>
 
 <header class="text-gray-600 body-font">
