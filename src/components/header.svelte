@@ -7,19 +7,19 @@
         path: string
     } [] = [
         {
-            name: 'Home', 
+            name: 'HOME', 
             path: '/'
         },
         {
-            name: 'About',
+            name: 'ABOUT',
             path: '/about'
         },
         {
-            name: 'Projects',
+            name: 'PROJECTS',
             path: '/projects'
         },
         {
-            name: 'Contact',
+            name: 'CONTACT',
             path: '/contact'
         }
     ]
@@ -33,7 +33,7 @@
 <header class="text-gray-600 body-font">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="/">
-            <span class="ml-3 text-xl text-jblue">Josh Allen</span>
+            <span class="ml-3 text-xl text-jblue">JOSH ALLEN</span>
         </a>
         <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
             {#each navLinks as navLink}
