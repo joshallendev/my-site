@@ -3,7 +3,7 @@
 </script>
 
 
-<section class="p-20 mt-10 bg-platinum p-5 w-full">
+<section class="px-20 py-10 bg-platinum p-5 w-full">
     <SectionHeader id={"skills"} title={"SKILLS"} />
 
     <div class="flex flex-wrap">

@@ -24,7 +24,7 @@
         },
         {
             name: 'CONTACT',
-            path: 'contact'
+            path: '#contact'
         }
     ]
     $: activePath = $page.url.pathname;
