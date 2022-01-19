@@ -3,7 +3,7 @@
 </script>
 
 
-<section id="skills" class="px-20 py-10 bg-platinum p-5 w-full scroll-mt-20">
+<section id="skills" class="px-10 py-10 bg-platinum p-5 w-full scroll-mt-20">
     <SectionHeader title={"SKILLS"} />
     <div class="flex flex-wrap">
         <div class="lg:w-1/3 md:w-full px-8 py-6">

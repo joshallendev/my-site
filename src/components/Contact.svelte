@@ -2,7 +2,7 @@
     import SectionHeader from './SectionHeader.svelte';
 </script>
 
-<section id="contact" class="px-20 pt-10 pb-20 bg-platinum w-full scroll-mt-20">
+<section id="contact" class="px-10 pt-10 pb-20 bg-platinum w-full scroll-mt-20">
     <SectionHeader title={"CONTACT"} />
     <div class="container px-5 py-8 mx-auto">
         <div class="flex flex-col text-center w-full mb-12">
@@ -40,9 +40,4 @@
         </form>
         </div>
     </div>
-    <form netlify method="POST" data-netlify-recaptcha="true">
-        <input type="text" name="test"/>
-        <div data-netlify-recaptcha="true"></div>
-        <button type="submit">Submit</button>
-    </form>
 </section>
