@@ -47,16 +47,8 @@ import Footer from "./Footer.svelte";
 
             if (scrollPosition > elementOffsetTop && scrollPosition < elementOffsetBottom) {
                 activeAnchor = elementID.toUpperCase();
-                console.log(elementID);
             } 
-            console.log({
-                elementID, scrollPosition, elementOffsetTop, elementOffsetBottom
-            })
         }
-
-        
-
-
     }
 
 </script>

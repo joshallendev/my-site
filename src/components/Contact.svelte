@@ -10,7 +10,7 @@
             <p class="lg:w-2/3 mx-auto leading-relaxed text-base">I'd love to help you build something great.</p>
         </div>
         <div class="lg:w-1/2 md:w-2/3 mx-auto">
-        <div class="flex flex-wrap -m-2">
+        <form class="flex flex-wrap -m-2" netlify>
             <div class="p-2 w-full">
             <div>
                 <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
@@ -36,7 +36,7 @@
             
             </div>
             
-        </div>
+        </form>
         </div>
     </div>
 </section>
