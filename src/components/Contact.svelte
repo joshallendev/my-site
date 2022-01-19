@@ -33,7 +33,6 @@
             <button class="flex mx-auto text-richblackfogra border-0 py-2 px-8 focus:outline-none bg-cyan rounded text-lg hover:scale-105">Send Message</button>
             </div>
             <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-            <a href="mailto:" class="text-indigo-500">josh@joshallendev.com</a>
             
             </div>
             
