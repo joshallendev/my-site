@@ -28,7 +28,7 @@ import Footer from "./Footer.svelte";
             path: '#contact'
         }
     ]
-    $: activeAnchor = 'home';
+    $: activeAnchor = 'HOME';
     const nonActiveLinkSyles:string = "nav-link ml-5";
     const activeLinkSyles:string = "nav-link ml-5 font-semibold border-b-4 border-amaranth border-solid";
 
