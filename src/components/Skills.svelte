@@ -27,7 +27,7 @@
             <p class="font-medium mb-4">PROFESSIONAL EXPERIENCE</p>
           <div class="flex-grow sm:pl-8">
             <h2 class="title-font text-m">Software Programmer</h2>
-            <h3 class="text-gray-500 mb-3">2021 - 2022 | The Travelers Companies</h3>
+            <h3 class="text-gray-500 mb-3">2021 - Present | The Travelers Companies</h3>
         </div>
         <div class="flex-grow sm:pl-8">
             <h2 class="title-font text-m">Business Analyst</h2>
@@ -56,7 +56,7 @@
 
     ul li::before,
     h2.title-font::before {
-        content: "| ";
+        content: "+ ";
         color: #E83151;
         font-weight: bold; 
         display: inline-block; 

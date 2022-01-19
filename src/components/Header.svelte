@@ -30,7 +30,7 @@ import Footer from "./Footer.svelte";
     ]
     $: activeAnchor = 'HOME';
     const nonActiveLinkSyles:string = "nav-link mx-2";
-    const activeLinkSyles:string = "nav-link mx-2 font-semibold border-b-4 border-amaranth border-solid";
+    const activeLinkSyles:string = "nav-link mx-2 font-semibold border-b-4 border-cyan border-solid";
 
     function handleScroll(): void {
         const headerHeight:number = document.getElementById('header').getBoundingClientRect().height;
@@ -64,7 +64,7 @@ import Footer from "./Footer.svelte";
 <header id="header" class="body-font fixed bg-platinum w-full">
     <div class="container mx-auto flex flex-wrap py-5 flex-col md:flex-row items-center">
         <a class="flex title-font font-medium items-center mb-4 md:mb-0" href="/">
-            <span class="ml-3 text-xl">JOSH ALLEN</span>
+            <span class="ml-3 text-xl border-b-4 border-cyan border-solid">JOSH ALLEN</span>
         </a>
         <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
             {#each navLinks as navLink}
