@@ -23,7 +23,7 @@ const config = {
 			'electricindigo': '#6600ff',
 			'richblackfogra': '#101419',
 			'pureyellow': '#ffcc00',
-			'amaranth': '#E83151',
+			'pink': '#ff33ee',
 			'cyan': '#33FFCC'
 
 		}

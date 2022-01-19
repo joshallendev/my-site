@@ -53,15 +53,13 @@
     ul {
         list-style: none;
     }
-
     ul li::before,
     h2.title-font::before {
         content: "+ ";
-        color: #E83151;
+        color: #ff33ee;
         font-weight: bold; 
         display: inline-block; 
         width: 1em; 
         margin-left: -1em; 
     }
-
 </style>
