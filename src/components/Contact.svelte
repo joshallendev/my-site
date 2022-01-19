@@ -10,7 +10,7 @@
             <p class="lg:w-2/3 mx-auto leading-relaxed text-base">I'd love to help you build something great.</p>
         </div>
         <div class="lg:w-1/2 md:w-2/3 mx-auto">
-        <form class="flex flex-wrap -m-2" name="contact-form" method="POST" data-netlify-recaptcha="true" data-netlify="true">
+        <form method="POST" data-netlify-recaptcha="true" data-netlify="true" class="flex flex-wrap -m-2" name="contact-form">
             <div class="p-2 w-full">
             <div>
                 <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
@@ -29,8 +29,9 @@
                 <textarea id="message" name="message" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
             </div>
             </div>
+            <div data-netlify-recaptcha="true"></div>
             <div class="p-2 w-full">
-            <button class="flex mx-auto text-richblackfogra border-0 py-2 px-8 focus:outline-none bg-cyan rounded text-lg hover:scale-105" type="submit">Send Message</button>
+                <button class="flex mx-auto text-richblackfogra border-0 py-2 px-8 focus:outline-none bg-cyan rounded text-lg hover:scale-105" type="submit">Send Message</button>
             </div>
             <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
             
@@ -39,25 +40,5 @@
         </form>
         </div>
     </div>
-    <form
-  name="contact"
-  method="POST"
-  data-netlify-recaptcha="true"
-  data-netlify="true"
->
-  <p>
-    <label>
-      Email: <input type="text" name="name" />
-    </label>
-  </p>
-  <p>
-    <label>
-      Message: <textarea name="message"></textarea>
-    </label>
-  </p>
-  <div data-netlify-recaptcha="true"></div>
-  <p>
-    <button type="submit">Send</button>
-  </p>
-</form>
+    
 </section>
