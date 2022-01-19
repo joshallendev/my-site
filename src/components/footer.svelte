@@ -34,6 +34,7 @@
 </footer>
 
 <style>
+    
     footer {
        color: #fff;
     }

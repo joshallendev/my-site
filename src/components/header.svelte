@@ -34,7 +34,7 @@ import Footer from "./Footer.svelte";
 
     function handleScroll(): void {
         const headerHeight:number = document.getElementById('header').getBoundingClientRect().height;
-        const footerHeight:number = document.getElementById('footer').getBoundingClientRect().height;;
+        const footerHeight:number = document.getElementById('footer').getBoundingClientRect().height;
         const scrollPosition:number = scrollY + headerHeight;
 
         const allSections:HTMLCollectionOf<HTMLElement> = document.getElementsByTagName('section');
