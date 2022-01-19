@@ -2,7 +2,7 @@
     const currentYear: any = new Date().getFullYear();
 </script>
 
-<footer class="bg-richblackfogra fixed bottom-0 w-full text-gray-600 body-font ">
+<footer id="footer" class="bg-richblackfogra fixed bottom-0 w-full text-gray-600 body-font ">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <p class="text-sm text-gray-500 sm:mr-4 sm:pl-4 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© {currentYear} Josh Allen</p>
         <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">

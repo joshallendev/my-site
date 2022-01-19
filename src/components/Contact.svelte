@@ -2,8 +2,8 @@
     import SectionHeader from './SectionHeader.svelte';
 </script>
 
-<section class="px-20 pt-10 pb-40 bg-platinum w-full">
-    <SectionHeader id={"contact"} title={"CONTACT"} />
+<section id="contact" class="px-20 pt-10 pb-40 bg-platinum w-full">
+    <SectionHeader title={"CONTACT"} />
     <div class="container px-5 py-8 mx-auto">
         <div class="flex flex-col text-center w-full mb-12">
             <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Let's chat!</h1>
@@ -30,7 +30,7 @@
             </div>
             </div>
             <div class="p-2 w-full">
-            <button class="flex mx-auto text-platinum border-0 py-2 px-8 focus:outline-none bg-amaranth rounded text-lg hover:scale-105">Send Message</button>
+            <button class="flex mx-auto text-richblackfogra border-0 py-2 px-8 focus:outline-none bg-cyan rounded text-lg hover:scale-105">Send Message</button>
             </div>
             <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
             <a href="mailto:" class="text-indigo-500">josh@joshallendev.com</a>

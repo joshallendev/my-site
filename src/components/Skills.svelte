@@ -3,9 +3,8 @@
 </script>
 
 
-<section class="px-20 py-10 bg-platinum p-5 w-full">
-    <SectionHeader id={"skills"} title={"SKILLS"} />
-
+<section id="skills" class="px-20 py-10 bg-platinum p-5 w-full">
+    <SectionHeader title={"SKILLS"} />
     <div class="flex flex-wrap">
         <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6">
             <p class="font-medium">LANGUAGES</p>

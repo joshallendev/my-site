@@ -2,8 +2,8 @@
     import SectionHeader from './SectionHeader.svelte';
 </script>
 
-<section class="px-20 py-10 w-full">
-    <SectionHeader id={"about"} title={"ABOUT"} />
+<section id="about" class="px-20 py-10 w-full">
+    <SectionHeader title={"ABOUT"} />
     <div class="container mx-auto flex px-5 py-8 md:flex-row flex-col items-center ">
       <div class="mb-10 md:mb-0">
         <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/200x200">

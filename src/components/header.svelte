@@ -1,6 +1,7 @@
 <script lang="ts">
     import { page } from "$app/stores";
     import { onDestroy } from "svelte";
+import Footer from "./Footer.svelte";
 
     const navLinks: {
         name: string,
@@ -27,24 +28,47 @@
             path: '#contact'
         }
     ]
-    $: activePath = $page.url.pathname;
+    $: activeAnchor = 'home';
     const nonActiveLinkSyles:string = "nav-link ml-5";
-    const activeLinkSyles:string = "nav-link ml-5 text-electricindigo font-semibold";
+    const activeLinkSyles:string = "nav-link ml-5 font-semibold border-b-4 border-amaranth border-solid";
+
+    function handleScroll(): void {
+        const headerHeight:number = document.getElementById('header').getBoundingClientRect().height;
+        const footerHeight:number = document.getElementById('footer').getBoundingClientRect().height;;
+        const scrollPosition:number = scrollY + headerHeight;
+
+        const allSections:HTMLCollectionOf<HTMLElement> = document.getElementsByTagName('section');
+        for (let i = 0; i < allSections.length; i++) {
+            const element:HTMLElement = allSections[i];
+            const elementID = element.id;
+            const elementOffsetTop:number = element.offsetTop - 100;
+            const elementHeight:number = element.getBoundingClientRect().height;
+            const elementOffsetBottom:number = element.offsetTop + elementHeight + footerHeight;
+
+            if (scrollPosition > elementOffsetTop && scrollPosition < elementOffsetBottom) {
+                activeAnchor = elementID.toUpperCase();
+                console.log(elementID);
+            } 
+            console.log({
+                elementID, scrollPosition, elementOffsetTop, elementOffsetBottom
+            })
+        }
+
+        
+
+
+    }
 
 </script>
-
-<header class="body-font fixed bg-platinum w-full">
+<svelte:window on:scroll={handleScroll}/>
+<header id="header" class="body-font fixed bg-platinum w-full">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <a class="flex title-font font-medium items-center mb-4 md:mb-0" href="/">
             <span class="ml-3 text-xl">JOSH ALLEN</span>
         </a>
         <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
             {#each navLinks as navLink}
-                {#if navLink.path === activePath}
-                    <a href={navLink.path} class={activeLinkSyles}>{navLink.name}</a>
-                {:else}
-                    <a href={navLink.path} class={nonActiveLinkSyles}>{navLink.name}</a>
-                {/if}
+                <a href={navLink.path} class={navLink.name === activeAnchor ? activeLinkSyles : nonActiveLinkSyles}>{navLink.name}</a>
             {/each}
         </nav>
     </div>
