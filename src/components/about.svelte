@@ -1,11 +1,5 @@
-<svelte:head>
-	<title>Josh Allen | About </title>
-	<meta name="robots" content="noindex nofollow" />
-	<html lang="en" />
-</svelte:head>
-
-<section class="text-gray-600 body-font">
-    <div class="container mx-auto flex px-5 py-8 md:flex-row flex-col items-center">
+<section id="about">
+    <div class="container mx-auto flex px-5 py-8 md:flex-row flex-col items-center ">
       <div class="mb-10 md:mb-0">
         <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/200x200">
       </div>
@@ -52,5 +46,3 @@
         </div>
     </div>
   </section>
-
-

@@ -12,7 +12,7 @@
         },
         {
             name: 'ABOUT',
-            path: '/about'
+            path: '#about'
         },
         {
             name: 'PROJECTS',
@@ -25,15 +25,15 @@
     ]
     $: activePath = $page.url.pathname;
     console.log($page);
-    const nonActiveLinkSyles:string = "ml-5 hover:text-jblue hover:font-bold";
-    const activeLinkSyles:string = "ml-5 text-jblue font-bold";
+    const nonActiveLinkSyles:string = "ml-5";
+    const activeLinkSyles:string = "ml-5 text-electricindigo font-semibold";
 
 </script>
 
-<header class="text-gray-600 body-font">
+<header class="body-font fixed bg-platinum top-0 w-full">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="/">
-            <span class="ml-3 text-xl text-jblue">JOSH ALLEN</span>
+        <a class="flex title-font font-medium items-center mb-4 md:mb-0" href="/">
+            <span class="ml-3 text-xl">JOSH ALLEN</span>
         </a>
         <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
             {#each navLinks as navLink}
