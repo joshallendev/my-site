@@ -58,7 +58,7 @@
     ul li::before,
     h2.title-font::before {
         content: "| ";
-        color: #6200FF;
+        color: #E83151;
         font-weight: bold; 
         display: inline-block; 
         width: 1em; 

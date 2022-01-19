@@ -22,7 +22,8 @@ const config = {
 			'kellygreen': '#2BC016',
 			'electricindigo': '#6600ff',
 			'richblackfogra': '#101419',
-			'pureyellow': '#ffcc00'
+			'pureyellow': '#ffcc00',
+			'amaranth': '#E83151'
 
 		}
 	},

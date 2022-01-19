@@ -6,6 +6,10 @@
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <p class="text-sm text-gray-500 sm:mr-4 sm:pl-4 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© {currentYear} Josh Allen</p>
         <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            <p class="text-sm text-gray-500 sm:mr-4 sm:pl-4 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4"></p>
+        </span>
+        <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            
         <a class="ml-3" href="https://github.com/joshallendev">
             <svg class="w-5 h-5" viewBox="0 0 256 250" preserveAspectRatio="xMidYMid">
                 <g>
@@ -26,6 +30,7 @@
         </a>
         </span>
     </div>
+    
 </footer>
 
 <style>
