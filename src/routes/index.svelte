@@ -21,3 +21,8 @@
 <Skills />
 <Projects />
 <Contact />
+<form netlify method="POST" data-netlify-recaptcha="true">
+  <input type="text" name="test"/>
+  <div data-netlify-recaptcha="true"></div>
+  <button type="submit">Submit</button>
+</form>
