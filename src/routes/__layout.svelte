@@ -1,8 +1,8 @@
 <script>
 	import { page } from "$app/stores";
 	import '../app.css';
-	import Header from '../components/header.svelte';
-	import Footer from '../components/footer.svelte';
+	import Header from '../components/Header.svelte';
+	import Footer from '../components/Footer.svelte';
 
 	$: pageTitle = $page.url.pathname.substring(1);
 </script>
@@ -13,7 +13,7 @@
 </svelte:head>
 
 <Header />
-<div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+<div class="flex flex-wrap flex-col md:flex-row items-center">
 	<slot />
 </div>
 <Footer />

@@ -20,8 +20,9 @@ const config = {
 
 			'platinum': '#EBEBEB',
 			'kellygreen': '#2BC016',
-			'electricindigo': '#6200FF',
-			'richblackfogra': '#101419'
+			'electricindigo': '#6600ff',
+			'richblackfogra': '#101419',
+			'pureyellow': '#ffcc00'
 
 		}
 	},

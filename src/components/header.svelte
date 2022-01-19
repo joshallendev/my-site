@@ -8,23 +8,26 @@
     } [] = [
         {
             name: 'HOME', 
-            path: '/'
+            path: '#'
         },
         {
             name: 'ABOUT',
             path: '#about'
         },
         {
+            name: 'SKILLS',
+            path: '#skills'
+        },
+        {
             name: 'PROJECTS',
-            path: '/projects'
+            path: '#projects'
         },
         {
             name: 'CONTACT',
-            path: '/contact'
+            path: 'contact'
         }
     ]
     $: activePath = $page.url.pathname;
-    console.log($page);
     const nonActiveLinkSyles:string = "ml-5";
     const activeLinkSyles:string = "ml-5 text-electricindigo font-semibold";
 
