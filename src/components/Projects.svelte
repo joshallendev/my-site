@@ -3,7 +3,7 @@
 </script>
 
 
-<section id="projects" class="px-20 py-10 w-full">
+<section id="projects" class="px-20 py-10 w-full scroll-mt-20">
     <SectionHeader title={"PROJECTS"} />
       <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-wrap -m-4">

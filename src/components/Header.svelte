@@ -29,8 +29,8 @@ import Footer from "./Footer.svelte";
         }
     ]
     $: activeAnchor = 'HOME';
-    const nonActiveLinkSyles:string = "nav-link ml-5";
-    const activeLinkSyles:string = "nav-link ml-5 font-semibold border-b-4 border-amaranth border-solid";
+    const nonActiveLinkSyles:string = "nav-link mx-2";
+    const activeLinkSyles:string = "nav-link mx-2 font-semibold border-b-4 border-amaranth border-solid";
 
     function handleScroll(): void {
         const headerHeight:number = document.getElementById('header').getBoundingClientRect().height;
@@ -62,7 +62,7 @@ import Footer from "./Footer.svelte";
 </script>
 <svelte:window on:scroll={handleScroll}/>
 <header id="header" class="body-font fixed bg-platinum w-full">
-    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <div class="container mx-auto flex flex-wrap py-5 flex-col md:flex-row items-center">
         <a class="flex title-font font-medium items-center mb-4 md:mb-0" href="/">
             <span class="ml-3 text-xl">JOSH ALLEN</span>
         </a>
