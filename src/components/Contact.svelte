@@ -10,7 +10,7 @@
             <p class="lg:w-2/3 mx-auto leading-relaxed text-base">I'd love to help you build something great.</p>
         </div>
         <div class="lg:w-1/2 md:w-2/3 mx-auto">
-        <form method="POST" data-netlify="true" class="flex flex-wrap -m-2" name="contact-form">
+        <!-- <form method="POST" data-netlify="true" class="flex flex-wrap -m-2" name="contact-form">
             <div class="p-2 w-full">
             <div>
                 <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
@@ -36,7 +36,27 @@
             
             </div>
             
-        </form>
+        </form> -->
+        <form name="contact" method="POST" data-netlify="true">
+            <p>
+              <label>Your Name: <input type="text" name="name" /></label>   
+            </p>
+            <p>
+              <label>Your Email: <input type="email" name="email" /></label>
+            </p>
+            <p>
+              <label>Your Role: <select name="role[]" multiple>
+                <option value="leader">Leader</option>
+                <option value="follower">Follower</option>
+              </select></label>
+            </p>
+            <p>
+              <label>Message: <textarea name="message"></textarea></label>
+            </p>
+            <p>
+              <button type="submit">Send</button>
+            </p>
+          </form>
         </div>
     </div>
 </section>
