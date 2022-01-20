@@ -1,27 +1,19 @@
 <script lang=ts>
     import SectionHeader from './SectionHeader.svelte';
-
-    const submitHandler = (event) => {
-
-    }
-
     
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  let myForm = document.getElementById("contact-form");
-  let formData = new FormData(myForm);
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString(),
-  })
-    .then(() => console.log("Form successfully submitted"))
-    .catch((error) => alert(error));
-};
-document
-    .querySelector("form")
-    .addEventListener("submit", handleSubmit);
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        let myForm = document.getElementById("contact-form");
+        let formData = new FormData(myForm);
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString(),
+        })
+        .then(() => console.log("Form successfully submitted"))
+        .catch((error) => alert(error));
+    };
 </script>
 
 <section id="contact" class="px-10 pt-10 pb-20 bg-platinum w-full scroll-mt-20">
@@ -52,7 +44,7 @@ document
             </div>
             </div>
             <div class="p-2 w-full">
-                <button class="flex mx-auto text-richblackfogra border-0 py-2 px-8 focus:outline-none bg-cyan rounded text-lg hover:scale-105" type="submit">Send Message</button>
+                <button on:submit={handleSubmit} class="flex mx-auto text-richblackfogra border-0 py-2 px-8 focus:outline-none bg-cyan rounded text-lg hover:scale-105" type="submit">Send Message</button>
             </div>
             <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
             
