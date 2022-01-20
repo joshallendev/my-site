@@ -6,13 +6,6 @@ const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
 	preprocess: [preprocess({})],
-	prerender: {
-		crawl: true,
-		enabled: true,
-		force: true,
-		pages: ['*']
-	},
-
 	kit: {
 		adapter: adapter(),
 
