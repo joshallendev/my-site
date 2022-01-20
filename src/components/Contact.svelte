@@ -3,7 +3,7 @@
 </script>
 
 <section id="contact" class="px-10 pt-10 pb-20 bg-platinum w-full scroll-mt-20">
-    <SectionHeader title={"CONTACT"} />
+    <SectionHeader title={"CONTACT"} borderColor="cyan"/>
     <div class="container px-5 py-8 mx-auto">
         <div class="flex flex-col text-center w-full mb-12">
             <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Let's chat!</h1>

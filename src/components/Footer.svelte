@@ -3,7 +3,7 @@
 </script>
 
 <footer id="footer" class="bg-richblackfogra fixed bottom-0 w-full text-gray-600 body-font">
-    <div class="container flex p-2 flex-row justify-between">
+    <div class="flex p-2 flex-row justify-between w-full">
         <p class="text-sm text-gray-500 px-5 sm:py-2">© {currentYear} Josh Allen</p>
         <p class="text-sm text-gray-500 px-5 sm:py-2 flex justify-between">  
             <a class="ml-3" href="https://github.com/joshallendev">
