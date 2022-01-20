@@ -30,14 +30,12 @@
             id="contact-form" 
             class="flex flex-wrap -m-2" 
             name="contact"
-            netlify-honeypot="bot-field"
-            data-netlify-recaptcha="true">
+            netlify-honeypot="bot-field">
             <p class="invisible">
                 <label>
                   Might be a trick who knows <input name="bot-field" />
                 </label>
               </p>
-              <div data-netlify-recaptcha="true"></div>
             <div class="p-2 w-full">
             <div>
                 <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
