@@ -6,7 +6,7 @@
     <SectionHeader title={"ABOUT"} borderColor="pink" />
     <div class="container mx-auto flex px-5 py-8 md:flex-row flex-col items-center ">
         <div class="mb-10 md:mb-0">
-        <img class="object-cover object-center rounded border border-pink border-solid" width="350" height="350" alt="Josh Allen" src="./../static/img/joshallennature.jpeg">
+        <img class="object-cover object-center rounded border border-pink border-solid" width="350" height="350" alt="Josh Allen" src="%svelte.assets%/joshallennature.jpeg">
         </div>
         <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
         <p class="mb-4 leading-relaxed">I'm Josh Allen, a Software Developer and Programmer living in Upstate NY. I started my career in development by teaching myself the basics using informal online courses and videos in order to solve a problem at my then-current job.</p>
