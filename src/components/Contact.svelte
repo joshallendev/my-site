@@ -24,7 +24,20 @@
             <p class="lg:w-2/3 mx-auto leading-relaxed text-base">I'd love to help you build something great.</p>
         </div>
         <div class="lg:w-1/2 md:w-2/3 mx-auto">
-        <form method="POST" data-netlify="true" id="contact-form" class="flex flex-wrap -m-2" name="contact">
+        <form 
+            method="POST" 
+            data-netlify="true" 
+            id="contact-form" 
+            class="flex flex-wrap -m-2" 
+            name="contact"
+            netlify-honeypot="bot-field"
+            data-netlify-recaptcha="true">
+            <p class="invisible">
+                <label>
+                  Might be a trick who knows <input name="bot-field" />
+                </label>
+              </p>
+              <div data-netlify-recaptcha="true"></div>
             <div class="p-2 w-full">
             <div>
                 <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
