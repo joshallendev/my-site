@@ -1,5 +1,9 @@
 <script lang=ts>
     import SectionHeader from './SectionHeader.svelte';
+
+    const submitHandler = (event) => {
+
+    }
 </script>
 
 <section id="contact" class="px-10 pt-10 pb-20 bg-platinum w-full scroll-mt-20">
@@ -10,7 +14,7 @@
             <p class="lg:w-2/3 mx-auto leading-relaxed text-base">I'd love to help you build something great.</p>
         </div>
         <div class="lg:w-1/2 md:w-2/3 mx-auto">
-        <form method="POST" data-netlify="true" class="flex flex-wrap -m-2" name="contact-form">
+        <form method="POST" data-netlify="true" class="flex flex-wrap -m-2" name="contact">
             <div class="p-2 w-full">
             <div>
                 <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
@@ -35,7 +39,7 @@
             <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
             
             </div>
-            
+            <input type="hidden" name="form-name" value="contact">
         </form>
         </div>
     </div>
