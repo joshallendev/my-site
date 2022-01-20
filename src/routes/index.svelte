@@ -22,10 +22,10 @@
 
     typewriter();
 
-
+    
   }
 
-
+  export const prerender = true;
 
 
   onMount(() => {
