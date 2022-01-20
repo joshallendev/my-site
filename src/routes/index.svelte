@@ -8,7 +8,7 @@
   import Projects from '../components/Projects.svelte';
   import Contact from '../components/Contact.svelte';
   import { onMount } from 'svelte';
-
+  import Header from '../components/Header.svelte';
   function typeText(text: string, elemID: string): void {
 
     const elem: HTMLElement = document.getElementById(elemID);
@@ -35,6 +35,7 @@
   });
 </script>
 
+<Header />
 <section id="home" class="px-10 py-20 h-screen flex justify-center items-center bg-platinum w-full">
   <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
