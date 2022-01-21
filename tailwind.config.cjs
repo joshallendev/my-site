@@ -3,6 +3,10 @@ const config = {
 
 	theme: {
 		extend: {},
+		fontFamily: {
+			'sans': 'Mukta',
+			'serif': 'Mukta'
+		},
 		colors: {
 			'turquoisegreen': '#BDD9BF',
 			'charcoal': '#2E4052',
@@ -24,7 +28,8 @@ const config = {
 			'richblackfogra': '#101419',
 			'pureyellow': '#ffcc00',
 			'pink': '#ff33ee',
-			'cyan': '#33FFCC'
+			'cyan': '#33FFCC',
+			'skyblue': '#8ACDEA',
 
 		}
 	},

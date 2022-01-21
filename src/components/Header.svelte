@@ -1,7 +1,7 @@
 <script lang="ts">
     import { page } from "$app/stores";
     import { onDestroy } from "svelte";
-import Footer from "./Footer.svelte";
+    import Footer from "./Footer.svelte";
 
     const navLinks: {
         name: string,
@@ -34,25 +34,48 @@ import Footer from "./Footer.svelte";
 
     function handleScroll(): void {
         const headerHeight:number = document.getElementById('header').getBoundingClientRect().height;
-        const footerHeight:number = document.getElementById('footer').getBoundingClientRect().height;;
-        const scrollPosition:number = scrollY + headerHeight;
+        const vh:number = innerHeight;
+        const scrollTop:number = scrollY + headerHeight;
+        const scrollBottom = scrollTop + vh;
 
         const allSections:HTMLCollectionOf<HTMLElement> = document.getElementsByTagName('section');
-        for (let i = 0; i < allSections.length; i++) {
-            const element:HTMLElement = allSections[i];
-            const elementID = element.id;
-            const elementOffsetTop:number = element.offsetTop - 100;
-            const elementHeight:number = element.getBoundingClientRect().height;
-            const elementOffsetBottom:number = element.offsetTop + elementHeight + footerHeight;
+        let currentElementPctVisible: any = {elementID: '', pctVisible: 0};
 
-            if (scrollPosition > elementOffsetTop && scrollPosition < elementOffsetBottom) {
-                activeAnchor = elementID.toUpperCase();
-            } 
+        for (let i = 0; i < allSections.length; i++) {
+            console.table(currentElementPctVisible);
+            const element: HTMLElement = allSections[i];
+            const elementID: string = element.id.toUpperCase();
+            const elementHeight: number = element.getBoundingClientRect().height;
+            const elementOffsetTop: number = element.offsetTop;
+            const elementOffsetBottom: number = element.offsetTop + elementHeight;
+
+            let pctVisible: number = 0;
+
+            // if not visible at all set pct to zero
+            if (scrollTop > elementOffsetBottom || elementOffsetTop > scrollBottom) {
+                pctVisible = 0;
+            } else if (elementOffsetTop > scrollTop) {
+                // fully visible
+                if (elementOffsetBottom < scrollBottom) {
+                    pctVisible = 100;
+                // partial bottom visibility
+                } else if (elementOffsetTop < scrollBottom) {
+                    pctVisible = Math.round((scrollBottom - elementOffsetTop) / elementHeight * 100);
+                }
+            } else if (elementOffsetBottom > screenTop) {
+                // partial top visibility 
+                pctVisible = Math.round((elementOffsetBottom - scrollTop) / elementHeight * 100);
+            }
+            // replace previously added element only if more pct is visible
+            if (pctVisible > currentElementPctVisible.pctVisible) {
+                currentElementPctVisible = { elementID, pctVisible };
+            }
         }
+        activeAnchor = currentElementPctVisible.elementID;
     }
 
 </script>
-<svelte:window on:scroll={handleScroll}/>
+<svelte:window on:scroll={handleScroll} />
 <header id="header" class="body-font fixed bg-platinum w-full">
     <div class="container mx-auto flex flex-wrap py-5 flex-col md:flex-row items-center">
         <a class="flex title-font font-medium items-center mb-4 md:mb-0" href="/">
