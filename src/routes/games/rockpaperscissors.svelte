@@ -1,5 +1,20 @@
 <script lang=ts>
 
+    const choices: any = [
+        {
+            name: 'rock',
+            value: 'rock'
+        },
+        {
+            name: 'paper', 
+            value: 'paper'
+        },
+        {
+            name: 'scissors',
+            value: 'scissors'
+        }
+    ]
+
     function handleGame(): void {
         const userWeapon: string = getUserWeapon();
         const computerWeapon: string = getComputerWeapon();
@@ -56,23 +71,9 @@
     }
 
     function getComputerWeapon(): string {
-        const randomSelection: number = Math.ceil(Math.random() * 3);
-        let weapon: string;
-        switch (randomSelection) {
-            case 1:
-                weapon = 'rock';
-                break;
-            case 2:
-                weapon = 'paper';
-                break;
-            case 3:
-                weapon = 'scissors';
-                break;
-            default:
-                break;
-        }
+        const randomSelection: number = Math.floor(Math.random() * choices.length);
+        let weapon: string = choices[randomSelection].value;
         return weapon;
-
     }
 </script>
 
