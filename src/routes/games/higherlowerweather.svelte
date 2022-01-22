@@ -1,11 +1,11 @@
 <script lang=ts>
 import { onMount } from "svelte";
 import Particles from '../../components/Particles.svelte';
-const WEATHER_API_KEY: string = 'f4c1ec3679afbe574f2fce7d1b767ddf';
+const WEATHER_API_KEY: string = process.env.WEATHER_API_KEY;
 
 let zipData;
 $: userZip = '';
-$: userZipData = null;
+$: userZipData = {};
 $: userCity = "";
 $: userTemp = '';
 $: userIcon = '';
@@ -35,8 +35,8 @@ async function fetchZipData() {
     const response = await fetch('..//data/zipcodes.json')
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             zipData = data;
+            console.log(zipData);
             // set the initial random zip
             currentZip = getRandomZip();
             randConditions = 'checking.....';
@@ -45,6 +45,16 @@ async function fetchZipData() {
         return response;
 }
 
+function findZipAndState(zipCode: string) {
+  const foundItem = zipData.find(element => {
+    const paddedZip = padZip(element.zip);
+    if (paddedZip === zipCode) {
+      return element;
+    }
+  });
+  console.log(foundItem);
+  return foundItem;
+}
 
 
 function padZip(zip: string) {
@@ -56,7 +66,6 @@ function padZip(zip: string) {
 }
 
 function updateWeatherData(weatherData: any): [string, string, string, string] {
-  console.log(weatherData);
   const temp: string = Math.ceil(weatherData.main.temp).toString();
   const conditions: string = weatherData.weather[0].main;
   const conditionsDesc = weatherData.weather[0].description;
@@ -68,7 +77,6 @@ function updateWeatherData(weatherData: any): [string, string, string, string] {
 async function fetchWeatherData(zipcode: string): any {
     let parsedData;
     const weatherURL: string = `https://api.openweathermap.org/data/2.5/weather?zip=${zipcode}&units=imperial&appid=${WEATHER_API_KEY}`;
-    console.log(weatherURL);
     let data: any = await fetch(weatherURL);
     if (!data.ok) {
         console.error('Request error: ' + data.status);
@@ -91,24 +99,23 @@ function handleRandomZip(e): void {
 function handlePickForUser(e): void {
   e.preventDefault();
   userZip = getRandomZip().zip;
+  userZipData = findZipAndState(userZip);
   handleInput();
 }
 
 function handleInput(): void {
   if (userZip.length < 5) { return }
-  console.log(Object.keys(zipData).filter(zip => zipData['zip'] === '12845'));
-  const foundZip = zipData.find(item => padZip(item.zip) === userZip);
-  console.log(foundZip);
 
   fetchWeatherData(userZip).then((data) => {
       userCity = data.name; 
+      userZipData = findZipAndState(userZip);
       [userTemp, userConditions, userConditionsDesc, userIcon] = updateWeatherData(data);
   })
   .catch(error => {
     [userTemp, userConditions, userConditionsDesc, userIcon] = ['', '', '', ''];
     userCity = "We couldn't find that zip code. Try again?";
     userZip = '';
-    console.log('Weather call failed' + error);
+    console.error('Weather call failed' + error);
   });
 }
 
@@ -175,20 +182,22 @@ onMount(() => {
           <div class="xl:w-1/2 md:w-1/2 p-4">
             <div class="p-6 rounded-lg bg-platinum">
               <h2 class="text-lg  font-medium font-bold mb-4">Pick Your Zip Code</h2>
-              <h1 class="title-font sm:text-2xl text-xl font-medium  mb-3">{userCity.length > 0 ? userCity : 'No Zip Data Yet...'}</h1>
+              <h1 class="title-font sm:text-2xl text-xl font-medium  mb-3">{userZipData.city ? userZipData.zip + ': ' + userZipData.city + ', ' + userZipData.state_name : 'No Zip Data Yet...'}</h1>
+              <p class="leading-relaxed mb-3">{userConditions ? 'Current conditions: ' + userConditions : 'Current conditions: '}</p>
               <p>
-                <input type="search" class="text-center mb-3" maxlength="5" on:keyup="{handleInput}" bind:value={userZip} placeholder="Pick a zip code...">
-              </p>
-              <button 
+                <input type="search" class="text-center mb-3" maxlength="5" on:keyup="{handleInput}" bind:value={userZip} placeholder="Enter a zip code...">
+                <button 
                 class="bg-electricindigo text-platinum py-1 hover:font-bold px-4 outline-black rounded p-2" 
                 on:click="{handlePickForUser}">Pick a Zip For Me</button>
+              </p>
+              
             </div>
           </div>
           <div class="xl:w-1/2 md:w-1/2 p-4">
             <div class="p-6 rounded-lg bg-platinum">
               <h2 class="text-lg  font-medium font-bold mb-4">Random Zip Code</h2>
               
-              <h1 class="title-font sm:text-2xl text-xl font-medium  mb-3">{currentZip.city && currentZip.state_name ? currentZip.city + ', ' + currentZip.state_name : 'No Random Zip Data Yet...'}</h1>
+              <h1 class="title-font sm:text-2xl text-xl font-medium  mb-3">{currentZip.city && currentZip.state_name ? currentZip.zip + ': ' + currentZip.city + ', ' + currentZip.state_name : 'No Random Zip Data Yet...'}</h1>
 
               <p class="leading-relaxed mb-3">{randConditions ? 'Current conditions: ' + randConditions : ''}</p>
 
@@ -234,7 +243,7 @@ onMount(() => {
       </div>
     {/if}
 
-    <h1 class="bg-platinum rounded fixed bottom-20 text-center">Featuring ZIP Code data provided by <a class="underline" 
+    <h1 class="bg-platinum rounded fixed bottom-20 p-2 text-center">Featuring ZIP Code data provided by <a class="underline" 
       href="https://simplemaps.com/data/us-zips">https://simplemaps.com/data/us-zips</a></h1>
   </div>
 </div>
