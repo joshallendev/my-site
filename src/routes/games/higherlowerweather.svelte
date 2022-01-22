@@ -67,7 +67,7 @@ function updateWeatherData(weatherData: any): [string, string, string, string] {
 
 async function fetchWeatherData(zipcode: string): any {
     let parsedData;
-    const weatherURL: string = `http://api.openweathermap.org/data/2.5/weather?zip=${zipcode}&units=imperial&appid=${WEATHER_API_KEY}`;
+    const weatherURL: string = `https://api.openweathermap.org/data/2.5/weather?zip=${zipcode}&units=imperial&appid=${WEATHER_API_KEY}`;
     console.log(weatherURL);
     let data: any = await fetch(weatherURL);
     if (!data.ok) {
