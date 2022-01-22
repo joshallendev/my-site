@@ -5,7 +5,7 @@
 <section id="projects" class="px-10 py-10 w-full scroll-mt-20">
     <SectionHeader title={"PROJECTS"} borderColor="pink"/>
       <div class="container px-5 py-8 mx-auto">
-        <div class="flex flex-wrap -m-4">
+        <div class="flex flex-wrap">
           <div class="p-4 md:w-1/2">
             <div class="h-full flex flex-col items-center text-center">
               <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/200x200">
