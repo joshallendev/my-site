@@ -36,7 +36,6 @@ async function fetchZipData() {
         .then(response => response.json())
         .then(data => {
             zipData = data;
-            console.log(zipData);
             // set the initial random zip
             currentZip = getRandomZip();
             randConditions = 'checking.....';
