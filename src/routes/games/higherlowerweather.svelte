@@ -171,7 +171,7 @@ onMount(() => {
   <div class="pt-90 container mx-auto">
     {#if !gameOver }
       <div class="container px-5 py-24 mx-auto">
-        <div class="flex flex-wrap text-center">
+        <div class="flex flex-col md:flex-row flex-wrap text-center w-full">
           <div class="xl:w-1/2 md:w-1/2 p-4">
             <div class="p-6 rounded-lg bg-platinum">
               <h2 class="text-lg  font-medium font-bold mb-4">Pick Your Zip Code</h2>
