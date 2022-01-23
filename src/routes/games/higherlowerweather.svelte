@@ -1,7 +1,11 @@
+<script lang=ts context=module>
+   
+</script>
+
 <script lang=ts>
 import { onMount } from "svelte";
 import Particles from '../../components/Particles.svelte';
-const WEATHER_API_KEY: string = process.env.WEATHER_API_KEY;
+const WEATHER_API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
 let zipData;
 $: userZip = '';
@@ -51,7 +55,6 @@ function findZipAndState(zipCode: string) {
       return element;
     }
   });
-  console.log(foundItem);
   return foundItem;
 }
 

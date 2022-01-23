@@ -2,7 +2,7 @@
     import SectionHeader from './SectionHeader.svelte';
 </script>
 
-<section id="about" class="px-10 py-10 w-full scroll-mt-20">
+<section id="about" class="px-10 py-10 w-full scroll-mt-20 bg-richblackfogra text-platinum">
     <SectionHeader title={"ABOUT"} borderColor="pink" />
     <div class="container mx-auto flex px-5 py-8 md:flex-row flex-col items-center ">
         <div class="mb-10 md:mb-0">
