@@ -176,7 +176,7 @@ onMount(() => {
 
 
 
-<div id="weather-game" class="h-screen bg-electricindigo">
+<div id="weather-game" class="mt-auto h-screen bg-electricindigo">
 
   <div class="pt-90 container mx-auto">
     {#if !gameOver }
@@ -246,8 +246,8 @@ onMount(() => {
       </div>
     {/if}  
   </div>
-  <div class="flex flex-col items-center">
-    <h1 class="bg-platinum rounded fixed bottom-20 p-2 text-center w-3/4 mx-auto">Featuring ZIP Code data provided by 
+  <div class="items-center">
+    <h1 class="bg-platinum rounded p-2 text-center w-3/4 mx-auto">Featuring ZIP Code data provided by 
       <a class="underline" href="https://simplemaps.com/data/us-zips">https://simplemaps.com/data/us-zips</a>
       as well as particles from 
       <a class="underline" href="https://www.npmjs.com/package/svelte-particles?activeTab=readme">svelte-particles</a>
