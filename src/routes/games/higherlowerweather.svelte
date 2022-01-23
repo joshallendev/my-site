@@ -160,13 +160,14 @@ function handlePlayAgain() {
 
 
 onMount(() => {
-        fetchZipData()
-          .then(data => {
-            fetchWeatherData(currentZip.zip)
-              .then(data => {
-                [randTemp, randConditions, randConditionsDesc, randIcon] = updateWeatherData(data);
-              });
-          });
+  fetchZipData()
+    .then(data => {
+      fetchWeatherData(currentZip.zip)
+        .then(data => {
+          [randTemp, randConditions, randConditionsDesc, randIcon] = updateWeatherData(data);
+        });
+    });
+  
 });
 </script>
 {#if userWon }
@@ -243,16 +244,21 @@ onMount(() => {
           </div>
         </div>
       </div>
-    {/if}
-
-    <h1 class="bg-platinum rounded fixed bottom-20 p-2 text-center">Featuring ZIP Code data provided by <a class="underline" 
-      href="https://simplemaps.com/data/us-zips">https://simplemaps.com/data/us-zips</a></h1>
+    {/if}  
+  </div>
+  <div class="flex flex-col items-center">
+    <h1 class="bg-platinum rounded fixed bottom-20 p-2 text-center w-3/4 mx-auto">Featuring ZIP Code data provided by 
+      <a class="underline" href="https://simplemaps.com/data/us-zips">https://simplemaps.com/data/us-zips</a>
+      as well as particles from 
+      <a class="underline" href="https://www.npmjs.com/package/svelte-particles?activeTab=readme">svelte-particles</a>
+      & 
+      <a class="underline" href="https://github.com/matteobruni/tsparticles">tsParticles</a>
+    </h1>
   </div>
 </div>
 
 <style>
 #weather-game {
-    background-image: url("..//thunderstorm.jpg");
-    background-size: cover;
+    background-image: linear-gradient(to right top, #e79ac6, #fe9ca7, #ffa888, #eebb74, #cbd076, #a6d987, #7cdfa3, #47e2c5, #00dcdc, #00d4ee, #2acaf9, #5fbefb);
 }
 </style>

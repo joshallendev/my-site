@@ -1,6 +1,6 @@
 <script lang="ts">
     import SectionHeader from '../SectionHeader.svelte';
-    import Project, { projectDescription, projectImgURL, projectName, projectURL } from '../Project.svelte';
+    import Project from '../Project.svelte';
 </script>
 
 <section id="projects" class="px-10 py-10 w-full scroll-mt-20 bg-richblackfogra text-platinum">
@@ -10,13 +10,20 @@
           <Project 
             projectName={"Weather Higher/Lower Game"} 
             projectDescription={"The user is presented with a random USA Zip Code and can enter their own, or choose a random one. They then have to guess whether the weather in their ZIP Code is warmer or colder than the challenge ZIP Code. The weather data is provided by the OpenWeather API, and ZIP data is provided by a static file available from https://simplemaps.com/data/us-zips."}
-            projectImgURL={"https://dummyimage.com/200x200"}
+            projectImgURL={".//weathergame.png"}
             projectURL={"/games/higherlowerweather"} />
 
           <Project 
             projectName={"SharePoint Communication Site"} 
-            projectDescription={"As part of my work with Travelers Insurance, I created a custom communications site for Personal Insurance Customer Sales & Service. This site was built using vanilla JavaScript, HTML, and CSS. The backend data and images were housed within SharePoint lists, and accessed using the SharePoint JavaScript Object Model APIs."}
-            projectImgURL={"https://dummyimage.com/200x200"} />
+            projectDescription={"During my time with Travelers Insurance, I created a custom internal communications site for Personal Insurance Customer Sales & Service, using Microsoft SharePoint as the foundation. This site was built using vanilla JavaScript, HTML, and CSS. The backend data and images were housed within SharePoint lists, and accessed using the SharePoint JavaScript Object Model APIs."}
+            projectImgURL={null} 
+            projectURL={null}/>
+
+          <Project 
+            projectName={"joshallendev.com"} 
+            projectDescription={"Yes, this very site! This is my personal developer portfolio. I built it using SvelteKit, and it is deployed/hosted on Netlify."}
+            projectImgURL={".//thissite.png"}
+            projectURL={"/"} />
         </div>
       </div>
   </section>
