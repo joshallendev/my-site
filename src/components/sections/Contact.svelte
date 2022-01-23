@@ -1,5 +1,5 @@
 <script lang=ts>
-    import SectionHeader from './SectionHeader.svelte';
+    import SectionHeader from '../SectionHeader.svelte';
     
 
     const handleSubmit = (e) => {

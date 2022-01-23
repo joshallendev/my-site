@@ -1,5 +1,5 @@
 <script lang="ts">
-    import SectionHeader from './SectionHeader.svelte';
+    import SectionHeader from '../SectionHeader.svelte';
 </script>
 
 <section id="about" class="px-10 py-10 w-full scroll-mt-20 bg-richblackfogra text-platinum">

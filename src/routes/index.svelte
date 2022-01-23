@@ -3,13 +3,12 @@
 </script>
 
 <script lang=ts>
-  import About from '../components/About.svelte';
-  import Skills from '../components/Skills.svelte';
-  import Projects from '../components/Projects.svelte';
-  import Contact from '../components/Contact.svelte';
+  import About from '../components/sections/About.svelte';
+  import Skills from '../components/sections/Skills.svelte';
+  import Projects from '../components/sections/Projects.svelte';
+  import Contact from '../components/sections/Contact.svelte';
   import Header from '../components/Header.svelte';
-  
-  
+
 
 </script>
 

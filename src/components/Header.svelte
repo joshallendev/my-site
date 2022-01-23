@@ -1,8 +1,4 @@
 <script lang="ts">
-    import { page } from "$app/stores";
-    import { onDestroy } from "svelte";
-    import Footer from "./Footer.svelte";
-
     const navLinks: {
         name: string,
         path: string
