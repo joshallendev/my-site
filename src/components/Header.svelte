@@ -38,7 +38,6 @@
         let currentElementPctVisible: any = {elementID: '', pctVisible: 0};
 
         for (let i = 0; i < allSections.length; i++) {
-            console.table(currentElementPctVisible);
             const element: HTMLElement = allSections[i];
             const elementID: string = element.id.toUpperCase();
             const elementHeight: number = element.getBoundingClientRect().height;
