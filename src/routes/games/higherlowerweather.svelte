@@ -176,9 +176,9 @@ onMount(() => {
 
 
 
-<div id="weather-game" class="mt-auto h-screen bg-electricindigo">
+<div id="weather-game" class="">
 
-  <div class="pt-90 container mx-auto">
+  <div class="pt-90 container mx-auto mb-20">
     {#if !gameOver }
       <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-col md:flex-row flex-wrap text-center w-full">
@@ -246,7 +246,7 @@ onMount(() => {
       </div>
     {/if}  
   </div>
-  <div class="items-center">
+  <div class="container items-center mb-25">
     <h1 class="bg-platinum rounded p-2 text-center w-3/4 mx-auto">Featuring ZIP Code data provided by 
       <a class="underline" href="https://simplemaps.com/data/us-zips">https://simplemaps.com/data/us-zips</a>
       as well as particles from 

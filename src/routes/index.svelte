@@ -8,32 +8,25 @@
   import Projects from '../components/sections/Projects.svelte';
   import Contact from '../components/sections/Contact.svelte';
   import Header from '../components/Header.svelte';
-  import ScrollNotify from '../components/ScrollNotify.svelte';
   import { onMount } from 'svelte';
 
   const words = ["developer","problem solver","music lover","programmer","coder","outdoor enthusiast","tech nerd"];
-  let currentWord: number = 0;
+  let currentWordIndex: number = 0;
+  $: currentWord = words[0];
 
-  // function typeWriter () {
-  //   const iAmSpan = document.getElementById('i-am');
+  function wordplay(): void {
+    const span: HTMLElement = document.getElementById('word-span');
+    if (currentWordIndex === words.length) {
+      currentWordIndex = 0;
+    }
+    currentWord = words[currentWordIndex];
+    currentWordIndex++;
+  }
 
-  //   // move from last word to front of array again 
-  //   if (currentWord === words.length ) {
-  //     currentWord = 0;
-  //   }
+  onMount(() => {
+    setInterval(() => wordplay(), 3000)
+  });
 
-  //   const wordToType = words[currentWord];
-
-  //   iAmSpan.innerText = wordToType;
-  //   setTimeout(typeWriter, 2500);
-
-  //   currentWord++;
-
-  // }
-
-  // onMount(() =>  {
-  //   typeWriter();
-  // })
 </script>
 
 <Header />
@@ -44,13 +37,16 @@
     </div>
     <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
       <p class="mb-4 leading-relaxed text-4xl text-platinum">Hey there, I'm <span class="text-pink">Josh.</span></p>
+
+      
       <div id="roller" class="text-3xl text-platinum">I'm a
-        <span class="word text-cyan">developer</span>.
-        <span class="word text-cyan">problem solver</span>.
+        <p id="word-span" class="test-class word text-cyan inline">{currentWord} <span class="blink text-white">|</span></p>
+        <!-- <span class="word text-cyan">problem solver</span>.
         <span class="word text-cyan">music lover</span>.
         <span class="word text-cyan">coder</span>.
         <span class="word text-cyan">nature enthusiast</span>.
-        <span class="word text-cyan">tech nerd</span>.
+        <span class="word text-cyan">constant learner</span>.
+        <span class="word text-cyan">tech nerd</span>. -->
       </div>
     </div>
   </div>
@@ -60,7 +56,28 @@
 <Skills />
 <Projects />
 <Contact />
-<ScrollNotify />
-<style>
 
+<style>
+img:hover {
+  animation: rotation 2s infinite forwards;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.blink {
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
 </style>
