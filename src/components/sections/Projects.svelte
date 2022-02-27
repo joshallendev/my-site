@@ -8,6 +8,12 @@
       <div class="container px-5 py-8 mx-auto">
         <div class="flex flex-wrap">
           <Project 
+            projectName={"WORDLOL"} 
+            projectDescription={"WORDLOL is a League of Legends theme clone of the popular daily word game Wordle. It was created using Tailwind CSS and SvelteKit"}
+            projectImgURL={".//weathergame.png"}
+            projectURL={"playwordlol.com"} />
+
+          <Project 
             projectName={"Weather Higher/Lower Game"} 
             projectDescription={"The user is presented with a random USA Zip Code and can enter their own, or choose a random one. They then have to guess whether the weather in their ZIP Code is warmer or colder than the challenge ZIP Code. The weather data is provided by the OpenWeather API, and ZIP data is provided by a static file available from https://simplemaps.com/data/us-zips."}
             projectImgURL={".//weathergame.png"}
