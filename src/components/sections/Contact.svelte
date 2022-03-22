@@ -33,9 +33,9 @@
             netlify-honeypot="bot-field">
             <p class="invisible">
                 <label>
-                  Might be a trick who knows <input name="bot-field" />
+                    Might be a trick who knows <input name="bot-field" />
                 </label>
-              </p>
+                </p>
             <div class="p-2 w-full">
             <div>
                 <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
