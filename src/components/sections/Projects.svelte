@@ -10,7 +10,7 @@
           <Project 
             projectName={"WORDLOL"} 
             projectDescription={"WORDLOL is a League of Legends theme clone of the popular daily word game Wordle. It was created using Tailwind CSS and SvelteKit"}
-            projectImgURL={".//weathergame.png"}
+            projectImgURL={".//wordlol_img.png"}
             projectURL={"playwordlol.com"} />
 
           <Project 
