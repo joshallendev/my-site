@@ -20,7 +20,7 @@
 		
 		<div class="w-full">
 			{#if projectURL }
-					<a class="hover:font-bold text-cyan rounded" href="{projectURL}">
+					<a rel="external" class="hover:font-bold text-cyan rounded" href={projectURL}>
 						<span class="title-font font-medium text-lg border-b-4 border-pink border-solid">{projectName}</span>
 					</a>
 			{:else}
@@ -28,7 +28,7 @@
 			{/if}
 			<p class="mb-4 mt-4">{projectDescription}</p>
 			{#if projectURL }
-					<a class="hover:font-bold text-cyan rounded" href="{projectURL}">Check This Project Out</a>
+					<a rel="external" class="hover:font-bold text-cyan rounded" href={projectURL}>Check This Project Out</a>
 			{/if}
 		</div>
 	</div>
