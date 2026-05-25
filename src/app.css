@@ -3,6 +3,127 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	color-scheme: light;
+	--bg: #f7f5f0;
+	--surface: #ffffff;
+	--surface-muted: #eeebe4;
+	--text: #191919;
+	--muted: #67645f;
+	--border: #d8d2c8;
+	--accent: #2f6f68;
+	--accent-strong: #194f49;
+	--shadow: 0 16px 40px rgb(25 25 25 / 0.08);
+}
+
+:root[data-theme='dark'] {
+	color-scheme: dark;
+	--bg: #111315;
+	--surface: #171a1d;
+	--surface-muted: #202428;
+	--text: #f3f0e8;
+	--muted: #a9a49a;
+	--border: #31363b;
+	--accent: #93c5bd;
+	--accent-strong: #c7e0da;
+	--shadow: 0 16px 40px rgb(0 0 0 / 0.22);
+}
+
 html {
 	scroll-behavior: smooth;
+	background: var(--bg);
+	color: var(--text);
+}
+
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--text);
+	font-family:
+		Mukta,
+		ui-sans-serif,
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		sans-serif;
+}
+
+a {
+	color: inherit;
+}
+
+:root.theme-transition,
+:root.theme-transition * {
+	transition-duration: 240ms;
+	transition-property:
+		background-color, border-color, box-shadow, color, fill, opacity, stroke, text-decoration-color,
+		transform;
+	transition-timing-function: ease;
+}
+
+::selection {
+	background: var(--accent);
+	color: var(--bg);
+}
+
+.site-shell {
+	min-height: 100vh;
+	background:
+		radial-gradient(
+			circle at top left,
+			color-mix(in srgb, var(--accent) 14%, transparent),
+			transparent 26rem
+		),
+		var(--bg);
+	transition: background 240ms ease;
+}
+
+.content-frame {
+	width: min(100% - 2rem, 1080px);
+	margin: 0 auto;
+}
+
+.section {
+	scroll-margin-top: 96px;
+	padding: 5.5rem 0;
+}
+
+.section + .section {
+	border-top: 1px solid var(--border);
+}
+
+.eyebrow {
+	margin-bottom: 1.5rem;
+	color: var(--accent);
+	font-size: 0.82rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.body-copy {
+	color: var(--muted);
+	font-size: 1.08rem;
+	line-height: 1.75;
+}
+
+.quiet-link {
+	color: var(--accent-strong);
+	font-weight: 700;
+	text-decoration: underline;
+	text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+	text-underline-offset: 0.22em;
+	transition: color 160ms ease;
+}
+
+.quiet-link:hover {
+	color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	:root.theme-transition,
+	:root.theme-transition * {
+		transition-duration: 1ms;
+	}
 }

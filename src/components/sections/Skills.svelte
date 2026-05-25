@@ -1,71 +1,155 @@
 <script lang="ts">
 	import SectionHeader from '../SectionHeader.svelte';
+
+	const skillGroups = [
+		{
+			title: 'Languages',
+			items: ['HTML', 'JavaScript', 'CSS', 'Python']
+		},
+		{
+			title: 'Frameworks',
+			items: ['Angular', 'Svelte & SvelteKit', 'React']
+		},
+		{
+			title: 'Tools',
+			items: ['Git / GitHub', 'VS Code', 'Postman']
+		}
+	];
 </script>
 
-<section id="skills" class="px-10 py-10 bg-richblackfogra p-5 w-full scroll-mt-20 text-platinum">
-	<SectionHeader title="SKILLS" borderColor="cyan" />
-	<div class="flex flex-wrap">
-		<div class="w-1/2 md:w-1/3 px-8 py-6">
-			<p class="font-medium">LANGUAGES</p>
-			<ul class="pl-8">
-				<li class="my-4 title-font text-m">HTML</li>
-				<li class="my-4 title-font text-m">JavaScript</li>
-				<li class="my-4 title-font text-m">CSS</li>
-				<li class="my-4 title-font text-m">Python</li>
-			</ul>
-		</div>
-		<div class="w-1/2 md:w-1/3 px-8 py-6">
-			<p class="font-medium">FRAMEWORKS</p>
-			<ul class="pl-8">
-				<li class="my-4 title-font text-m">Angular</li>
-				<li class="my-4 title-font text-m">Svelte & SvelteKit</li>
-				<li class="my-4 title-font text-m">React</li>
-			</ul>
-		</div>
-		<div class="w-1/2 md:w-1/3 px-8 py-6">
-			<p class="font-medium">TOOLS</p>
-			<ul class="pl-8">
-				<li class="my-4 title-font text-m">GIT / Github</li>
-				<li class="my-4 title-font text-m">VS Code</li>
-				<li class="my-4 title-font text-m">Postman</li>
-			</ul>
-		</div>
-		<div class="w-full md:w-1/2 px-8 py-6">
-			<p class="font-medium mb-4">PROFESSIONAL EXPERIENCE</p>
-			<div class="flex-grow pl-8">
-				<h2 class="title-font text-m">Software Programmer</h2>
-				<h3 class="text-gray-500 mb-3">2021 - Present | The Travelers Companies</h3>
-			</div>
-			<div class="flex-grow pl-8">
-				<h2 class="title-font text-m">Business Analyst</h2>
-				<h3 class="text-gray-500 mb-3">2017 - 2021 | The Travelers Companies</h3>
+<section id="skills" class="section">
+	<div class="content-frame">
+		<SectionHeader title="SKILLS" />
+		<div class="skills-intro">
+			<div>
+				<h2>Tools I reach for often.</h2>
+				<p class="body-copy">
+					A compact snapshot of the languages, frameworks, and tooling I use to build maintainable
+					web experiences.
+				</p>
 			</div>
 		</div>
-		<div class="w-full md:w-1/2 px-8 py-6">
-			<p class="font-medium mb-4">CERTIFICATIONS</p>
-			<div class="flex-grow pl-8">
-				<h2 class="title-font text-m">CS50x - Introduction to Computer Science</h2>
-				<h3 class="text-gray-500 mb-3">In Progress | HarvardX and edX</h3>
+		<div class="skill-grid">
+			{#each skillGroups as group}
+				<div class="skill-group">
+					<h3>{group.title}</h3>
+					<ul>
+						{#each group.items as item}
+							<li>{item}</li>
+						{/each}
+					</ul>
+				</div>
+			{/each}
+		</div>
+		<div class="details-grid">
+			<div>
+				<h3>Experience</h3>
+				<dl>
+					<div>
+						<dt>Software Programmer</dt>
+						<dd>2021 - Present | The Travelers Companies</dd>
+					</div>
+					<div>
+						<dt>Business Analyst</dt>
+						<dd>2017 - 2021 | The Travelers Companies</dd>
+					</div>
+				</dl>
 			</div>
-			<div class="flex-grow pl-8">
-				<h2 class="title-font text-m">Full Stack JavaScript Techdegree</h2>
-				<h3 class="text-gray-500 mb-3">May 2021 | Treehouse</h3>
+			<div>
+				<h3>Certifications</h3>
+				<dl>
+					<div>
+						<dt>CS50x - Introduction to Computer Science</dt>
+						<dd>In Progress | HarvardX and edX</dd>
+					</div>
+					<div>
+						<dt>Full Stack JavaScript Techdegree</dt>
+						<dd>May 2021 | Treehouse</dd>
+					</div>
+				</dl>
 			</div>
 		</div>
 	</div>
 </section>
 
 <style>
-	ul {
+	.skills-intro {
+		margin-bottom: 2.2rem;
+		max-width: 660px;
+	}
+
+	h2 {
+		margin: 0;
+		color: var(--text);
+		font-size: clamp(2rem, 4vw, 3.4rem);
+		font-weight: 800;
+		letter-spacing: 0;
+		line-height: 1.05;
+	}
+
+	.skills-intro p {
+		margin: 1rem 0 0;
+	}
+
+	.skill-grid,
+	.details-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1rem;
+	}
+
+	.details-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		margin-top: 1rem;
+	}
+
+	.skill-group,
+	.details-grid > div {
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		background: color-mix(in srgb, var(--surface) 86%, transparent);
+		padding: 1.25rem;
+	}
+
+	h3 {
+		margin: 0 0 1rem;
+		color: var(--text);
+		font-size: 0.85rem;
+		font-weight: 800;
+		letter-spacing: 0.07em;
+		text-transform: uppercase;
+	}
+
+	ul,
+	dl {
+		margin: 0;
+		padding: 0;
 		list-style: none;
 	}
-	ul li::before,
-	h2.title-font::before {
-		content: '+ ';
-		color: #ff33ee;
-		font-weight: bold;
-		display: inline-block;
-		width: 1em;
-		margin-left: -1em;
+
+	li,
+	dd {
+		color: var(--muted);
+	}
+
+	li + li,
+	dl div + div {
+		margin-top: 0.7rem;
+	}
+
+	dt {
+		color: var(--text);
+		font-weight: 800;
+	}
+
+	dd {
+		margin: 0.15rem 0 0;
+	}
+
+	@media (max-width: 840px) {
+		.skill-grid,
+		.details-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

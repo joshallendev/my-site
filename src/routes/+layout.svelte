@@ -7,5 +7,7 @@
 	<title>Josh Allen | Software Developer</title>
 </svelte:head>
 
-<slot></slot>
-<Footer />
+<div class="site-shell">
+	<slot></slot>
+	<Footer />
+</div>

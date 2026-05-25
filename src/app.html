@@ -7,9 +7,18 @@
 			content="Josh Allen's Software Development and programming portfolio and resume."
 		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#f7f5f0" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta" />
+		<script>
+			const savedTheme = localStorage.getItem('theme');
+			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+			const theme = savedTheme === 'dark' || (!savedTheme && prefersDark) ? 'dark' : 'light';
+			const themeColor = theme === 'dark' ? '#111315' : '#f7f5f0';
+			document.documentElement.dataset.theme = theme;
+			document.querySelector('meta[name="theme-color"]')?.setAttribute('content', themeColor);
+		</script>
 		<link rel="icon" type="image/x-icon" href="%sveltekit.assets%/favicon.ico" />
 		%sveltekit.head%
 	</head>
