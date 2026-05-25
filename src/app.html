@@ -19,7 +19,9 @@
 			document.documentElement.dataset.theme = theme;
 			document.querySelector('meta[name="theme-color"]')?.setAttribute('content', themeColor);
 		</script>
-		<link rel="icon" type="image/x-icon" href="%sveltekit.assets%/favicon.ico" />
+		<link rel="icon" type="image/svg+xml" href="%sveltekit.assets%/favicon.svg?v=2" />
+		<link rel="icon" type="image/png" sizes="64x64" href="%sveltekit.assets%/favicon.png?v=2" />
+		<link rel="alternate icon" type="image/x-icon" href="%sveltekit.assets%/favicon.ico?v=2" />
 		%sveltekit.head%
 	</head>
 	<body>

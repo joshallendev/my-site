@@ -30,7 +30,8 @@
 
 			form.reset();
 			status = 'success';
-		} catch {
+		} catch (error) {
+			console.error('Contact form submission failed', error);
 			status = 'error';
 		}
 	};
