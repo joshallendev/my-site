@@ -34,7 +34,7 @@
 				width="400"
 				height="400"
 				alt="Josh Allen"
-				src="/joshallenprofile.jpeg"
+				src="/joshallenprofile.png"
 			/>
 		</div>
 	</div>
