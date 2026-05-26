@@ -1,17 +1,62 @@
 <script lang="ts">
-    import SectionHeader from '../SectionHeader.svelte';
+	import SectionHeader from '../SectionHeader.svelte';
 </script>
 
-<section id="about" class="px-10 py-10 w-full scroll-mt-20 bg-richblackfogra text-platinum">
-    <SectionHeader title={"ABOUT"} borderColor="pink" />
-    <div class="container mx-auto flex px-5 py-8 md:flex-row flex-col items-center ">
-        <div class="mb-10 md:mb-0">
-        <img class="object-cover object-center rounded border border-pink border-solid" width="350" height="350" alt="Josh Allen" src=".//joshallennature.jpeg">
-        </div>
-        <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-        <p class="mb-4 leading-relaxed">I'm Josh Allen, a Software Developer and Programmer. I started my career in development by teaching myself the basics using informal online courses and videos in order to solve a problem at my then-current job.</p>
-        <p class="mb-4 leading-relaxed">This project helped to spark my interest in web development and programming. My employer selected me to take part in a formal coding bootcamp in early 2021, and have been working in development ever since.</p>
-        <p class="mb-4 leading-relaxed">When I'm not coding, you can probably find me either listening to music, playing video games, or on the side of a mountain somewhere.</p>
-        </div>
-    </div>
+<section id="about" class="section">
+	<div class="content-frame">
+		<SectionHeader title="ABOUT" />
+		<div class="about-grid">
+			<div>
+				<h2>A practical path into software, shaped by real problems.</h2>
+			</div>
+			<div class="about-copy body-copy">
+				<p>
+					I'm Josh — a backend software engineer who builds payments infrastructure for a living.
+					I work mostly in Python and AWS, and I have a soft spot for serverless architectures and
+					the kind of automation that quietly saves people hours every week.
+				</p>
+				<p>
+					I didn't start out in software. I taught myself the basics through online courses and
+					tutorials to solve a problem at work, got hooked, and in early 2021 my employer sent me
+					through a formal coding bootcamp. I've been building ever since.
+				</p>
+				<p>
+					Outside of work, you can find me listening to music, playing some video games with
+					friends, or hiking somewhere in the Adirondacks.
+				</p>
+			</div>
+		</div>
+	</div>
 </section>
+
+<style>
+	.about-grid {
+		display: grid;
+		grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+		gap: clamp(2rem, 6vw, 5rem);
+	}
+
+	h2 {
+		margin: 0;
+		color: var(--text);
+		font-size: clamp(2rem, 4vw, 3.6rem);
+		font-weight: 800;
+		letter-spacing: 0;
+		line-height: 1.05;
+	}
+
+	.about-copy {
+		display: grid;
+		gap: 1.1rem;
+	}
+
+	.about-copy p {
+		margin: 0;
+	}
+
+	@media (max-width: 780px) {
+		.about-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

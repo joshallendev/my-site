@@ -1,0 +1,6 @@
+build
+.netlify
+.svelte-kit
+node_modules
+package
+static/data/*.json

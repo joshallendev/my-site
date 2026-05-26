@@ -1,18 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-		<meta name="description" content="Josh Allen's Software Development and programming portfolio and resume." />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Mukta">
-		<link rel="icon" type="image/x-icon" href="%svelte.assets%//favicon.ico" />
+		<meta
+			name="description"
+			content="Josh Allen's Software Development and programming portfolio and resume."
+		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		%svelte.head%
+		<meta name="theme-color" content="#f7f5f0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;700;800&display=swap"
+		/>
+		<script>
+			const savedTheme = localStorage.getItem('theme');
+			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+			const theme = savedTheme === 'dark' || (!savedTheme && prefersDark) ? 'dark' : 'light';
+			const themeColor = theme === 'dark' ? '#111315' : '#f7f5f0';
+			document.documentElement.dataset.theme = theme;
+			document.querySelector('meta[name="theme-color"]')?.setAttribute('content', themeColor);
+		</script>
+		<link rel="icon" type="image/svg+xml" href="%sveltekit.assets%/favicon.svg?v=2" />
+		<link rel="icon" type="image/png" sizes="64x64" href="%sveltekit.assets%/favicon.png?v=2" />
+		<link rel="alternate icon" type="image/x-icon" href="%sveltekit.assets%/favicon.ico?v=2" />
+		%sveltekit.head%
 	</head>
 	<body>
-		<div>%svelte.body%</div>
+		<div>%sveltekit.body%</div>
 	</body>
 </html>
-
