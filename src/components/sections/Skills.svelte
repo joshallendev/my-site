@@ -5,14 +5,6 @@
 		{
 			title: 'Languages',
 			items: ['HTML', 'JavaScript', 'CSS', 'Python']
-		},
-		{
-			title: 'Frameworks',
-			items: ['Angular', 'Svelte & SvelteKit', 'React']
-		},
-		{
-			title: 'Tools',
-			items: ['Git / GitHub', 'VS Code', 'Postman']
 		}
 	];
 </script>
