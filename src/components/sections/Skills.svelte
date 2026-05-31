@@ -3,8 +3,16 @@
 
 	const skillGroups = [
 		{
+			title: 'AWS Services',
+			items: ['Lambda', 'Step Functions', 'Cloudwatch', 'DynamoDB', 'API Gateway']
+		},
+		{
 			title: 'Languages',
-			items: ['HTML', 'JavaScript', 'CSS', 'Python']
+			items: ['Python', 'HTML', 'JavaScript', 'CSS', 'Java']
+		},
+		{
+			title: 'Tooling',
+			items: ['GitHub Actions', 'Kibana & Elasticsearch']
 		}
 	];
 </script>
@@ -38,7 +46,7 @@
 				<h3>Experience</h3>
 				<dl>
 					<div>
-						<dt>Software Programmer</dt>
+						<dt>Software Engineer</dt>
 						<dd>2021 - Present | The Travelers Companies</dd>
 					</div>
 					<div>
@@ -52,7 +60,7 @@
 				<dl>
 					<div>
 						<dt>CS50x - Introduction to Computer Science</dt>
-						<dd>In Progress | HarvardX and edX</dd>
+						<dd>2022 | HarvardX and edX</dd>
 					</div>
 					<div>
 						<dt>Full Stack JavaScript Techdegree</dt>

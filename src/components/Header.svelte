@@ -258,23 +258,35 @@
 
 	@media (max-width: 720px) {
 		.header-inner {
-			grid-template-columns: 1fr auto;
-			gap: 0.8rem;
-			padding: 0.8rem 0;
+			gap: 0.9rem;
+			min-height: 60px;
 		}
 
 		.nav-links {
-			grid-column: 1 / -1;
-			grid-row: 2;
-			justify-content: space-between;
-			width: 100%;
-			gap: 0.75rem;
+			gap: 0.7rem;
 			font-size: 0.78rem;
+		}
+	}
+
+	@media (max-width: 500px) {
+		.header-inner {
+			gap: 0.5rem;
+			min-height: 54px;
+		}
+
+		.brand {
+			font-size: 0.92rem;
+		}
+
+		.nav-links {
+			gap: 0.45rem;
+			font-size: 0.7rem;
+			letter-spacing: 0.02em;
 		}
 
 		.theme-toggle {
-			grid-column: 2;
-			grid-row: 1;
+			width: 2rem;
+			height: 2rem;
 		}
 	}
 </style>

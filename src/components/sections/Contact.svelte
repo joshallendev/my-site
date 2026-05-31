@@ -43,7 +43,6 @@
 			<SectionHeader title="CONTACT" />
 			<h2>Want to build something useful?</h2>
 			<p class="body-copy">I'd love to help you shape it, simplify it, and get it working well.</p>
-			<a class="quiet-link" href="mailto:hello@joshallendev.com">hello@joshallendev.com</a>
 		</div>
 		<div class="form-shell">
 			<form

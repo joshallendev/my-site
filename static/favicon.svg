@@ -13,7 +13,7 @@
 		}
 
 		.accent {
-			fill: #2f6f68;
+			fill: #2f5f9f;
 		}
 
 		@media (prefers-color-scheme: dark) {
@@ -26,7 +26,7 @@
 			}
 
 			.accent {
-				fill: #93c5bd;
+				fill: #8ebcff;
 			}
 		}
 	</style>
