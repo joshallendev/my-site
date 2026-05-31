@@ -30,11 +30,11 @@
 			</div>
 		</div>
 		<div class="skill-grid">
-			{#each skillGroups as group}
+			{#each skillGroups as group (group.title)}
 				<div class="skill-group">
 					<h3>{group.title}</h3>
 					<ul>
-						{#each group.items as item}
+						{#each group.items as item (item)}
 							<li>{item}</li>
 						{/each}
 					</ul>
